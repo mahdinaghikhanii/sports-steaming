@@ -50,6 +50,7 @@ class _RootScreanState extends State<RootScrean> {
     return WillPopScope(
       onWillPop: _onWillPop,
       child: Scaffold(
+          extendBody: true,
           body: IndexedStack(
             index: selectedScreenIndex,
             children: [
@@ -60,13 +61,20 @@ class _RootScreanState extends State<RootScrean> {
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
+            unselectedItemColor: Color(0xFF858586),
+            unselectedLabelStyle: TextStyle(color: Color(0xFF858586)),
+            selectedLabelStyle: TextStyle(color: Color(0xFF858586)),
+            showSelectedLabels: true,
+            showUnselectedLabels: true,
+            useLegacyColorScheme: true,
+            fixedColor: Color(0xFF15AA3D),
             items: const [
               BottomNavigationBarItem(
                   icon: Icon(CupertinoIcons.home), label: "Home"),
               BottomNavigationBarItem(
-                  icon: Icon(CupertinoIcons.cart), label: "Live"),
+                  icon: Icon(Icons.network_wifi), label: "Live"),
               BottomNavigationBarItem(
-                  icon: Icon(CupertinoIcons.person), label: "Library"),
+                  icon: Icon(Icons.library_books), label: "Library"),
               BottomNavigationBarItem(
                   icon: Icon(CupertinoIcons.person), label: "Search"),
             ],
