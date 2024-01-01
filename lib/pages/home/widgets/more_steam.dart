@@ -86,24 +86,55 @@ class MoreSteam extends StatelessWidget {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                      margin: const EdgeInsets.only(bottom: 10),
-                      width: 224,
-                      height: 126,
-                      decoration: ShapeDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(
-                                listMoreLivesModel[index].imageAddres),
-                            fit: BoxFit.fill,
+                  Stack(
+                    children: [
+                      Container(
+                          margin: const EdgeInsets.only(bottom: 10, right: 10),
+                          width: 224,
+                          height: 126,
+                          decoration: ShapeDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(
+                                    listMoreLivesModel[index].imageAddres),
+                                fit: BoxFit.fill,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                side: BorderSide(
+                                  width: 1,
+                                  color: Colors.white
+                                      .withOpacity(0.20000000298023224),
+                                ),
+                                borderRadius: BorderRadius.circular(16),
+                              ))),
+                      Positioned(
+                        bottom: 20,
+                        left: 10,
+                        child: Container(
+                          width: 24,
+                          height: 13.50,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 4.50, vertical: 1.50),
+                          decoration: ShapeDecoration(
+                            color: Color(0xFFE08600),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(3)),
                           ),
-                          shape: RoundedRectangleBorder(
-                            side: BorderSide(
-                              width: 1,
-                              color:
-                                  Colors.white.withOpacity(0.20000000298023224),
+                          child: const Text(
+                            'Live',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Color(0xFFF9F9F9),
+                              fontSize: 7.50,
+                              fontFamily: 'Inter',
+                              fontWeight: FontWeight.w500,
+                              height: 0,
+                              letterSpacing: -0.31,
                             ),
-                            borderRadius: BorderRadius.circular(16),
-                          ))),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                   Text(
                     listMoreLivesModel[index].title,
                     textAlign: TextAlign.center,

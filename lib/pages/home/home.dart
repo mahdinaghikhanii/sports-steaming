@@ -115,7 +115,7 @@ class _HomePagesState extends State<HomePages>
             ),
             const ManCityListWidgets(),
             const MoreSteam(),
-            const SizedBox(height: 150),
+            const SizedBox(height: 120),
           ]),
         ));
   }
