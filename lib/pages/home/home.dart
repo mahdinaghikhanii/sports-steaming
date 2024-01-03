@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sports_streaming/pages/home/widgets/slider.dart';
 
-import 'widgets/data.dart';
 import 'widgets/man_city_list.dart';
 import 'widgets/more_steam.dart';
 
